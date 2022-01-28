@@ -1,0 +1,55 @@
+{% extends "base.twig" %}
+
+{% block main %}
+<main role="main">
+    <div class="activites-et-advert">
+            <section class="activites">
+                <h2 class="titre-activites">{{ activites.titre }}</h2>
+                {% for activites in actwalk %}
+                <div class="conteneur-activites">
+                    <a href="">
+                        <figure class="resultat-activite">
+                            <img src="{{activites.img1}}" alt="{{activites.txtimg1}}" class="img-activites-grandes">
+                            <figcaption class="text-activite">
+                                <p class="bold">{{ activites.nom1 }}</p>
+                            </figcaption>
+                        </figure>
+                    </a>
+                    <div class="double-activites">
+                        <a href="">
+                            <figure class="resultat-activite">
+                                <img src="{{activites.img2}}" alt="{{activites.txtimg2}}" class="img-activites-moyenne">
+                                <figcaption class="text-activite">
+                                    <p class="bold">{{ activites.nom2 }}</p>
+                                </figcaption>
+                            </figure>
+                        </a>
+                        <a href="">
+                            <figure class="resultat-activite">
+                                <img src="{{activites.img3}}" alt="{{activites.txtimg3}}" class="img-activites-moyenne">
+                                <figcaption class="text-activite">
+                                    <p class="bold">{{ activites.nom3 }}</p>
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </section>
+            <aside>
+                <figure class="advert">
+                    <img src="images/pub/pub-netflix3.gif" alt="pub netflix" class="advert-gif-activite">
+                </figure>
+                <figure class="advert2">
+                    <img src="images/pub/pub-netflix2.gif" alt="pub netflix 2" class="advert-gif-activite">
+                </figure>
+                <figure class="advert4">
+                    <img src="images/pub/pub-netflix4.gif" alt="pub netflix 4" class="advert-gif-activite">
+                </figure>
+                <figure class="advert2">
+                    <img src="images/pub/pub-netflix.gif" alt="pub netflix 3" class="advert-gif-activite">
+                </figure>
+            </aside>
+        </div>
+</main>
+{% endblock main %}

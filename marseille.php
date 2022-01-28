@@ -1,0 +1,33 @@
+<?php
+
+// Initialise Twig
+include('include/twig.php');
+$twig = init_twig();
+
+include('include/data-ville.php');
+
+echo $twig->render('ville.twig', [
+    'titre' => 'Sejour Marseille',
+    'nav' => $navmars,
+    'tete' => $tete,
+    'nav2' => $nav,
+    'filtretag' => $filtretag,
+    'tableau' => $footer,
+    'lienacc' => $lienacc,
+    'lang' => $langfr,
+    'form' => $formmars,
+    'lien' => $linkmars,
+    'heb' => $hotelmars,
+    'recherche' => $hotelmars2,
+    'walk' => $balademars,
+    'balade' => $balademars2,
+    'restaurant' => $restomars,
+    'resto' => $restomars2,
+    'activity' => $activitemars,
+    'activites' => $activitemars2,
+    'tramway' => $trammars,
+    'bus' => $busmars,
+    'popushow' => $popshow
+
+]);
+?>

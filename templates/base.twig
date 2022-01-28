@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="Fr">
+	<head>
+		<link rel="stylesheet" href="css/reservia.css">
+		<meta charset="utf-8">
+		<script src="https://kit.fontawesome.com/8225284e04.js" crossorigin="anonymous"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>{{titre}}</title>
+	</head>
+	<body>
+        <header role="banner">
+			<div class="en-tete">
+                <ul class="conteneur-logo-lang">
+			    	<li><img class="logo-reservia" src="images/logo/reservia.png" alt="Logo Reservia"/></li>
+                    <li class="lang"><a href="{{lang.lienang}}" class="{{lang.ang}}"><b>ENG</b></a></li>
+                    <li class="lang"><a href="{{lang.lienfr}}" class="{{lang.fr}}"><b>FR</b></a></li>
+                </ul>
+				<nav class="menu-principal" role="navigation">
+					<ul class="conteneur-navigation">
+						<li><a href="{{lienacc.paris}}" class="navigation {{nav.paris}}">Paris</a></li>
+						<li><a href="{{lienacc.mars}}" class="navigation {{nav.marseille}}">Marseille</a></li>
+						<li><a href="{{lienacc.stra}}" class="navigation {{nav.strasbourg}}">Strasbourg</a></li>
+					</ul>
+					<ul class="conteneur-sing-up">
+						<li><a href="{{lienacc.singup}}" class="sing-up">{{nav2.singup}}</a></li>
+					</ul>
+				</nav>
+			</div>
+			<h1 class="text-en-tete">{{tete.vacance}}</h1>
+			<p class="text-en-tete">{{tete.centre}}</p>
+			<method="post" action="traitement.php" role="search">
+				<p class="zone-recherche">
+					<a href=""><i class="fas fa-map-marker-alt"></i></a>
+					<select name="lieu" class="formulaire">
+						<option value="">{{form.form1}}</option>
+						<option value="1">{{form.form2}}</option>
+						<option value="2">{{form.form3}}</option> 
+					</select>
+					<a href="" class="recherche"><span class="text-search"><i class="fas fa-search"></i></span><span class="logo-search"><i class="fas fa-search"></i></span></a>
+				</p>
+			</method>
+            <div class="conteneur-filtres" role="navigation">
+                <h3>Filtres</h3>
+                <ul class="liste-filtre">
+                    <li class="filtre {{filtre.heb}}"><a href="{{lien.paris1}}{{lien.mars1}}{{lien.stra1}}" {{afiltre.aheb}}><i class="fas fa-hotel"></i>{{filtretag.filtre1}}</a></li>
+                    <li class="filtre {{filtre.balade}}"><a href="{{lien.paris2}}{{lien.mars2}}{{lien.stra2}}" {{afiltre.abalade}}><i class="fas fa-walking"></i>{{filtretag.filtre2}}</a></li>
+                    <li class="filtre {{filtre.resto}}"><a href="{{lien.paris3}}{{lien.mars3}}{{lien.stra3}}" {{afiltre.aresto}}><i class="fas fa-utensils"></i>{{filtretag.filtre3}}</a></li>
+                    <li class="filtre {{filtre.activite}}"><a href="{{lien.paris4}}{{lien.mars4}}{{lien.stra4}}" {{afiltre.aactivite}}><i class="fas fa-table-tennis"></i>{{filtretag.filtre4}}</a></li></a>
+                    <li class="filtre {{filtre.transport}}"><a href="{{lien.paris5}}{{lien.mars5}}{{lien.stra5}}" {{afiltre.atransport}}><i class="fas fa-subway"></i>{{filtretag.filtre5}}</a></li
+                </ul>
+            </div>
+		</header>
+        {% block main %}
+            
+        {% endblock main %}
+        <footer role="contentinfo">
+            <div class="codex-background">
+                <div class="conteneur-codex">
+                    {% for footer in tableau %}
+                    <div class="hebergements-foot">
+                        <ul>
+                            <li><h3>{{footer.titre}}</h3></li>
+                            {% for footli in footer.link %}
+                            <ol class="liste-codex">
+                                <li><a href="{{footli.lien}}">{{footli.liste}}</a></li>
+                            </ol>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

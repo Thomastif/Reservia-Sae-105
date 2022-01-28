@@ -1,0 +1,85 @@
+{% extends "base.twig" %}
+
+{% block main %}
+<main role="main">
+    <p class="info">
+        <i class="fas fa-info"></i>
+        <span class="texte-info">{{info.hebfr}}{{info.restfr}}{{info.hrbang}}{{info.restang}}</span>
+    </p>
+    <div class="liste-hebergement">
+        <article class="hotel-recherche">  
+            <h2>{{ recherche.titre }}</h2>
+            <div class="hebergements">
+                {% for recherche in hebresto %}
+                <a href="">
+                    <figure class="resultat-recherche">
+                    <img src="{{recherche.img1}}" alt="{{recherche.txtimg1}}" class="img-hebergement">
+                        <figcaption class="description-hebergement">
+                            <p class="bold titre-hebergement">{{ recherche.nom1 }}</p> 
+                            <p class="text-hebergement">{{ recherche.prix1 }}<span class="bold">€</span></p>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </figcaption>
+                    </figure>
+                </a>
+                {% endfor %}
+                
+            </div>
+                <a class="afficher-plus"> 
+                    <h3>{{popushow.plus}}</h3> 
+                </a>
+        </article>
+        <article class="plus-populaires">
+                <h2 class="titre-populaire">{{popushow.titre}}<i class="fas fa-chart-line"></i></h2>
+            <div class="plus-populaire">
+                <a href="">
+                    <figure class="resultat-populaires">
+                        <img src="{{recherche.img7}}" alt="{{recherche.txtimg7}}" class="img-plus-populaire">
+                        <figcaption class="conteneur-text-populaire">
+                            <p class="bold nom-hebergement-populaire">{{ recherche.nom7 }}</p>
+                            <p class="text-populaires">{{ recherche.prix7 }}<span class="bold">€</span></p>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </figcaption>
+                    </figure>
+                </a>
+                <a href="">
+                    <figure class="resultat-populaires">
+                        <img src="{{recherche.img8}}" alt="{{recherche.txtimg8}}" class="img-plus-populaire">
+                        <figcaption class="conteneur-text-populaire">
+                            <p class="bold nom-hebergement-populaire">{{ recherche.nom8 }}</p>
+                            <p class="text-populaires">{{ recherche.prix8 }}<span class="bold">€</span></p>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star grey-star"></i>
+                        </figcaption>
+                    </figure>
+                </a>
+                </div>
+        </article>
+        <aside class="ad-hotel">
+            <figure class="advert3">
+                <img src="images/pub/pub-netflix.gif" alt="pub netflix" class="advert-gif">
+            </figure>
+            <figure class="advert2">
+                <img src="images/pub/pub-netflix2.gif" alt="pub netflix 2" class="advert-gif">
+            </figure>
+            <figure class="advert4">
+                <img src="images/pub/pub-netflix4.gif" alt="pub netflix 4" class="advert-gif">
+            </figure>
+            <figure class="advert2">
+                <img src="images/pub/pub-netflix3.gif" alt="pub netflix 3" class="advert-gif">
+            </figure>
+        </aside>
+    </div>
+</section>
+</main>
+{% endblock main %}

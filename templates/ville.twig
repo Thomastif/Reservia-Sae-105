@@ -1,0 +1,255 @@
+{% extends "base.twig" %}
+
+{% block main %}
+<main>
+    <section id="global">
+        <p class="info">
+            <i class="fas fa-info"></i>
+            <span class="texte-info">{{tete.hebrest}}</span>
+        </p>
+        <div class="liste-hebergement">
+            <article class="ville-recherche">  
+                <h2>{{ recherche.titre }}</h2>
+                <div class="hebergements">
+                    {% for recherche in heb %}
+                    <a href="">
+                    <figure class="resultat-recherche">
+                        <img src="{{recherche.img1}}" alt="{{recherche.txtimg1}}" class="img-hebergement">
+                            <figcaption class="description-hebergement">
+                                <p class="bold titre-hebergement">{{ recherche.nom1 }}</p> 
+                                <p class="text-hebergement">{{ recherche.prix1 }}<span class="bold">€</span></p>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </figcaption>
+                        </figure>
+                    </a>
+                    {% endfor %}
+                </div>
+                    <a class="afficher-plus"> 
+                        <h3>{{popushow.plus}}</h3> 
+                    </a>
+            </article>
+            <aside class="plus-populaires">
+                    <h2 class="titre-populaire">{{popushow.titre}}<i class="fas fa-chart-line"></i></h2>
+                <div class="plus-populaire">
+                    <a href="">
+                        <figure class="resultat-populaires">
+                            <img src="{{recherche.img7}}" alt="{{recherche.txtimg7}}" class="img-plus-populaire">
+                            <figcaption class="conteneur-text-populaire">
+                                <p class="bold nom-hebergement-populaire">{{ recherche.nom7 }}</p>
+                                <p class="text-populaires">{{ recherche.prix7 }}<span class="bold">€</span></p>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </figcaption>
+                        </figure>
+                    </a>
+                    <a href="">
+                        <figure class="resultat-populaires">
+                            <img src="{{recherche.img8}}" alt="{{recherche.txtimg8}}" class="img-plus-populaire">
+                            <figcaption class="conteneur-text-populaire">
+                                <p class="bold nom-hebergement-populaire">{{ recherche.nom8 }}</p>
+                                <p class="text-populaires">{{ recherche.prix8 }}<span class="bold">€</span></p>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star grey-star"></i>
+                            </figcaption>
+                        </figure>
+                    </a>
+                    </div>
+            </aside>
+        </div>
+    </section>
+
+
+                                                                    <!--BALADE-->
+    <div class="activites-et-advert">
+        <section class="balade">
+            <h2 class="titre-activites">{{ balade.titre }}</h2>
+            <div class="conteneur-activites">
+                {% for balade in walk %}
+                <a href="">
+                    <figure class="resultat-activite">
+                        <img src="{{balade.img1}}" alt="{{balade.txtimg1}}" class="img-activites-grandes">
+                        <figcaption class="text-activite">
+                            <p class="bold">{{ balade.nom1 }}</p>
+                        </figcaption>
+                    </figure>
+                </a>
+                <div class="double-activites">
+                    <a href="">
+                        <figure class="resultat-activite">
+                            <img src="{{balade.img2}}" alt="{{balade.txtimg2}}" class="img-activites-moyenne">
+                            <figcaption class="text-activite">
+                                <p class="bold">{{ balade.nom2 }}</p>
+                            </figcaption>
+                        </figure>
+                    </a>
+                    <a href="">
+                        <figure class="resultat-activite">
+                            <img src="{{balade.img3}}" alt="{{balade.txtimg3}}" class="img-activites-moyenne">
+                            <figcaption class="text-activite">
+                                <p class="bold">{{ balade.nom3 }}</p>
+                            </figcaption>
+                        </figure>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+        <aside>
+            <figure class="advert">
+                <img src="images/pub/pub-netflix4.gif" alt="pub netflix 4" class="advert-gif">
+            </figure>
+            <figure class="advert2">
+                <img src="images/pub/pub-netflix3.gif" alt="pub netflix 3" class="advert-gif">
+            </figure>
+        </aside>
+    </div>
+
+                                                                <!--RESTAURANT-->
+
+    <section class="restaurant">
+        <div class="liste-hebergement">
+            <article class="ville-recherche">  
+                <h2>{{ resto.titre }}</h2>
+                <div class="hebergements">
+                    {% for resto in restaurant %}
+                    <a href="">
+                    <figure class="resultat-recherche">
+                        <img src="{{resto.img1}}" alt="{{resto.txtimg1}}" class="img-hebergement">
+                            <figcaption class="description-hebergement">
+                                <p class="bold titre-hebergement">{{ resto.nom1 }}</p> 
+                                <p class="text-hebergement">{{ resto.prix1 }}<span class="bold">€</span></p>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </figcaption>
+                        </figure>
+                    </a>
+                    {% endfor %}
+                </div>
+                <a class="afficher-plus"> 
+                    <h3>{{popushow.plus}}</h3> 
+                </a>
+            </article>
+            <aside class="plus-populaires">
+                    <h2 class="titre-populaire">{{popushow.titre}} <i class="fas fa-chart-line"></i></h2>
+                <div class="plus-populaire">
+                    <a href="">
+                        <figure class="resultat-populaires">
+                            <img src="{{resto.img7}}" alt="{{resto.txtimg7}}" class="img-plus-populaire">
+                            <figcaption class="conteneur-text-populaire">
+                                <p class="bold nom-hebergement-populaire">{{ resto.nom7 }}</p>
+                                <p class="text-populaires">{{ resto.prix7 }}<span class="bold">€</p>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </figcaption>
+                        </figure>
+                    </a>
+                    <a href="">
+                        <figure class="resultat-populaires">
+                            <img src="{{resto.img8}}" alt="{{resto.txtimg8}}" class="img-plus-populaire">
+                            <figcaption class="conteneur-text-populaire">
+                                <p class="bold nom-hebergement-populaire">{{ resto.nom8 }}</p>
+                                <p class="text-populaires">{{ resto.prix8 }}<span class="bold">€</span></p>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </figcaption>
+                        </figure>	
+                    </a>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+                                                                <!--ACTIVITE-->
+
+    <div class="activites-et-advert">
+            <section class="activites">
+                <h2 class="titre-activites">{{ activites.titre }}</h2>
+                <div class="conteneur-activites">
+                    {% for activites in activity %}
+                    <a href="">
+                        <figure class="resultat-activite">
+                            <img src="{{activites.img1}}" alt="{{activites.txtimg1}}" class="img-activites-grandes">
+                            <figcaption class="text-activite">
+                                <p class="bold">{{ activites.nom1 }}</p>
+                            </figcaption>
+                        </figure>
+                    </a>
+                    <div class="double-activites">
+                        <a href="">
+                            <figure class="resultat-activite">
+                                <img src="{{activites.img2}}" alt="{{activites.txtimg2}}" class="img-activites-moyenne">
+                                <figcaption class="text-activite">
+                                    <p class="bold">{{ activites.nom2 }}</p>
+                                </figcaption>
+                            </figure>
+                        </a>
+                        <a href="">
+                            <figure class="resultat-activite">
+                                <img src="{{activites.img3}}" alt="{{activites.txtimg3}}" class="img-activites-moyenne">
+                                <figcaption class="text-activite">
+                                    <p class="bold">{{ activites.nom3 }}</p>
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                    {% endfor %}    
+                </div>
+            </section>
+            <aside>
+                <figure class="advert">
+                    <img src="images/pub/pub-netflix.gif" alt="pub netflix" class="advert-gif">
+                </figure>
+                <figure class="advert2">
+                    <img src="images/pub/pub-netflix2.gif" alt="pub netflix 2" class="advert-gif">
+                </figure>
+            </aside>
+        </div>
+
+                                                                    <!--TRASPORTS-->
+        <section class="transport">
+            <article class="tram">
+                <h2>Tramway</h2>
+                <figure class="resultat-transport">
+                    <img src="{{tramway.img}}" alt="{{tramway.txtimg}}" class="img-transport">
+                    <figcaption class="conteneur-text-populaire">
+                        <p class="text-transport">{{ tramway.prix }}<span class="bold">€</span></p>
+                        <p>{{ tramway.ligne1 }}</p>
+                        <p>{{ tramway.ligne2 }}</p>
+                        <p>{{ tramway.ligne3 }}</p>
+                    </figcaption>
+                </figure>
+            </article>
+            <article class="bus">
+                <h2>Bus</h2>
+                <figure class="resultat-transport">
+                    <img src="{{bus.img}}" alt="{{bus.txtimg}}" class="img-transport">
+                    <figcaption class="conteneur-text-populaire">
+                        <p class="text-transport">{{ bus.prix }}<span class="bold">€</span></p>
+                        <p>{{ bus.ligne1 }}</p>
+                        <p>{{ bus.ligne2 }}</p>
+                        <p>{{ bus.ligne3 }}</p>
+                    </figcaption>
+                </figure>
+            </article>			
+    </section>
+</main>
+{% endblock main %}

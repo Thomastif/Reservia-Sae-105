@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="Fr">
+	<head>
+		<link rel="stylesheet" href="css/reservia.css">
+		<meta charset="utf-8">
+		<script src="https://kit.fontawesome.com/8225284e04.js" crossorigin="anonymous"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>{{title.titre1}}{{title.titre2}}</title>
+	</head>
+	<body>
+        <video class="background-video" autoplay loop muted>
+            <source src="video/singup.mp4">
+        </video>
+        <header role="banner">
+			<div class="en-tete">
+                <ul class="conteneur-logo-lang">
+			    	<li><img class="logo-reservia" src="images/logo/reservia.png" alt="Logo Reservia"/></li>
+                    <li class="lang"><a href="{{lang.lienang}}" class="{{lang.ang}}"><b>ENG</b></a></li>
+                    <li class="lang"><a href="{{lang.lienfr}}" class="{{lang.fr}}"><b>FR</b></a></li>
+                </ul>
+				<nav class="menu-principal" role="navigation">
+					<ul class="conteneur-navigation">
+						<li><a href="{{lienacc.paris}}" class="navigation {{nav.paris}}">Paris</a></li>
+						<li><a href="{{lienacc.mars}}" class="navigation {{nav.marseille}}">Marseille</a></li>
+						<li><a href="{{lienacc.stra}}" class="navigation {{nav.strasbourg}}">Strasbourg</a></li>
+					</ul>
+					<ul class="conteneur-sing-up">
+						<li><a href="{{lienacc.singup}}" class="sing-up">{{nav2.singup}}</a></li>
+					</ul>
+				</nav>
+			</div>
+        </header>
+        <section class="section-singup">
+            <div class="block-singup">
+                <form class="form-singup" method="post" action="reception.php">
+                    <div class="name">
+                        <div>
+                            <label for="lname">{{form.lname}}</label>
+                            <input type="text" id="lname" name="Last name :" required minlength="4" maxlength="8" size="10">
+                        </div>
+                        <div>
+                            <label for="fname">{{form.fname}}</label>
+                            <input type="text" id="fname" name="First name :" required minlength="4" maxlength="8" size="10">
+                        </div>
+                    </div>
+                    <div class="mail-tel">
+                        <div>
+                            <label for="mail">{{form.mail}}</label>
+                            <input type="text" id="mail" name="Mail :" required minlength="4" maxlength="8" size="10">
+                        </div>
+                        <div>
+                            <label for="tel">{{form.tel}}</label>
+                            <input type="text" id="tel" name="Phone number :" required minlength="4" maxlength="8" size="10">
+                        </div>
+                    </div>
+                    <div class="mdp">
+                        <div>
+                            <label for="pass1">{{form.mdp1}}</label>
+                            <input type="password" id="pass1" name="Password :" required minlength="4" maxlength="8" size="10">
+                        </div>
+                        <div>
+                            <label for="pass2">{{form.mdp2}}</label>
+                            <input type="password" id="pass2" name="Password confirmation :" minlength="4" maxlength="8" size="10">
+                        </div>
+                    </div>
+                    <div class="button">
+                        <input class="button-login" type="button" value="{{form.but1}}">
+                        <input class="button-singup" type="submit" value="{{form.but2}}">
+                    </div>
+                </form>
+            </div>
+        </section>
+        <footer role="contentinfo">
+            <div class="codex-background-singup">
+                <div class="conteneur-codex">
+                    {% for footer in tableau %}
+                    <div class="hebergements-foot">
+                        <ul>
+                            <li><h3>{{footer.titre}}</h3></li>
+                            {% for footli in footer.link %}
+                            <ol class="liste-codex">
+                                <li><a href="{{footli.lien}}">{{footli.liste}}</a></li>
+                            </ol>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

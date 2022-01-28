@@ -1,0 +1,50 @@
+{% extends "base.twig" %}
+
+{% block main %}
+                                                                    <!--TRASPORTS-->
+<main>                                                              
+    <section class="transport-onglet">
+        <article class="tram">
+            <h2>Tramway</h2>
+            <figure class="resultat-transport">
+                <img src="{{tramway.img}}" alt="{{tramway.txtimg}}" class="img-transport">
+                <figcaption class="conteneur-text-populaire">
+                    <p class="text-transport">{{ tramway.prix }}<span class="bold">€</span></p>
+                    <p>{{ tramway.ligne1 }}</p>
+                    <p>{{ tramway.ligne2 }}</p>
+                    <p>{{ tramway.ligne3 }}</p>
+                </figcaption>
+            </figure>
+        </article>
+        <article class="bus">
+            <h2>Bus</h2>
+            <figure class="resultat-transport">
+                <img src="{{bus.img}}" alt="{{bus.txtimg}}" class="img-transport">
+                <figcaption class="conteneur-text-populaire">
+                    <p class="text-transport">{{ bus.prix }}<span class="bold">€</span></p>
+                    <p>{{ bus.ligne1 }}</p>
+                    <p>{{ bus.ligne2 }}</p>
+                    <p>{{ bus.ligne3 }}</p>
+                </figcaption>
+            </figure>
+        </article>
+    </section>
+    <div class="carte-pub">
+        <section>
+            <article>
+                <h2>{{ carte.titre }}</h2>
+                <figure class="resultat-carte">
+                    <a href="{{carte.img}}"target="blank"><img src="{{carte.img}}" alt="{{carte.txtimg}}" class="carte-transport"></a>
+                </figure>
+            </article>			
+        </section>
+        <aside>
+            <a>
+                <figure class="advert-transport">
+                    <img src="images/pub/pub-netflix3.gif" alt="pub netflix" class="advert-gif-transport">
+                </figure>
+            </a>
+        </aside>
+    </div>
+</main>
+{% endblock main %}
